@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+
+    <!-- JS -->
+    <script>
+        function acao(){
+
+            //Limpar
+            document.getElementById("mensagem").innerHTML = " "
+            
+            // Capturar números
+            var inicio = parseInt(document.getElementById("inicio").value)
+            var fim = parseInt(document.getElementById("fim").value)
+
+            // Laço de repetição
+            indice = inicio
+
+            while (indice <= fim) {
+            document.getElementById("mensagem").innerHTML += indice + "  "
+            indice++   
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Informe um número inicial" id="inicio">
+        <input type="text" placeholder="Informe um número final" id="fim">
+        <input type="button" value="Enviar" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

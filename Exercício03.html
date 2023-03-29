@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+
+    <!-- JS -->
+    <script>
+        function acao(){
+            // Capturar os dados
+            var produto = document.getElementById("produto").value
+            var valor = parseFloat(document.getElementById("valor").value)
+            var pagamento = document.getElementById("pagamento").value
+
+            // Verificar se haverá desconto ou não
+            var total
+
+            if(pagamento == 1){
+                desconto = (valor * 10) / 100
+                total = valor - desconto
+                document.getElementById("mensagem").innerHTML = document.getElementById("mensagem").innerHTML ="Produto: "+produto+"/ Desconto: R$"+desconto.toFixed(2)+ "/ Valor total: R$"+total.toFixed(2)
+            }else if (pagamento == 2){
+                document.getElementById("mensagem").innerHTML = document.getElementById("mensagem").innerHTML ="Produto:"+produto+". Desconto: Desconto não aplicado a essa forma de pagamento. Valor: R$"+valor
+            }else{
+                document.getElementById("mensagem").innerHTML = document.getElementById("mensagem").innerHTML ="ERRO COMPRA NÃO EFETUADA. Forma de pagaemnto não definida.(Defina uma forma de pagamento!)"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Produto" id="produto">
+
+        <input type="text" placeholder="Valor" id="valor">
+
+        <select id="pagamento">
+            <option value="0">Forma de pagamento</option>
+            <option value="1">A vista</option>
+            <option value="2">A prazo</option>
+        </select>
+        <input type="button" value="Confirmar Compra" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+</body>
+</html>

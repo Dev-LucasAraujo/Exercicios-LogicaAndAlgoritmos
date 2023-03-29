@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+
+    <!-- JS -->
+    <script>
+        function acao(){
+            // Capturar lados
+            var ls = document.getElementById("ls").value
+            var ld = document.getElementById("ld").value
+            var li = document.getElementById("li").value
+            var le = document.getElementById("le").value
+
+            // Verificando se é ou não um quadrado
+            var quadrado
+
+            if (ls == ld && ls == li && ls == le){
+                quadrado = "É um quadrado"
+            }else{
+                quadrado = "Não é um quadrado"
+            }
+
+            // Mensagem
+            document.getElementById("mensagem").innerHTML = "Com base nos números informados: "+quadrado
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Lado Superior" id="ls">
+        <input type="text" placeholder="Lado Direiro" id="ld">
+        <input type="text" placeholder="Lado Inferior" id="li">
+        <input type="text" placeholder="Lado Esquerdo" id="le">
+        <input type="button" value="Verificar" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

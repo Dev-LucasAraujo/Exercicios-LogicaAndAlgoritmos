@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+
+    <!-- JS -->
+    <script>
+        function contar(){
+
+            //Limpar
+            document.getElementById("mensagem").innerHTML = " "
+
+            // Capturar número
+            var numero = parseInt(document.getElementById("numero").value)
+
+            // Criar laço
+                
+                inicio = numero - 10
+                while (inicio < numero){
+                    document.getElementById("mensagem").innerHTML += inicio + "  "
+                    inicio++
+                }
+
+                fim = numero + 10
+                while (fim >= numero){
+                    document.getElementById("mensagem").innerHTML += numero + "  "
+                    numero++
+                }
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Número" id="numero">
+        <input type="button" value="Enviar" onclick="contar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+</body>
+</html>

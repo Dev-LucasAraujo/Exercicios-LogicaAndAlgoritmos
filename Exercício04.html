@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+
+    <!-- JS -->
+    <script>
+        function acao(){
+            // Capturar valores
+            var n1 = parseFloat(document.getElementById("numero1").value)
+            var n2 = parseFloat(document.getElementById("numero2").value)
+            var n3 = parseFloat(document.getElementById("numero3").value)
+
+            // Definindo o menor
+            var menor
+
+            if (n1 < n2 && n1 < n3){
+                menor = n1
+            }else if(n2 < n1 && n2 < n3){
+                menor = n2
+            }else if(n3 < n1 && n3 < n2){
+                menor = n3
+            }
+
+            // Definindo o maior
+            var maior
+
+            if (n1 > n2 && n1 > n3){
+                maior = n1
+            }else if(n2 > n1 && n2 > n3){
+                maior = n2
+            }else if(n3 > n1 && n3 > n2){
+                maior = n3
+            }
+
+            // Definindo o igual
+            var igual
+
+            if (n1 == n2){
+                igual = n1, n2
+            }else if (n1 == n3){
+                igual = n1, n3
+            }else if (n2 == n1){
+                igual = n2, n1
+            }else if (n2 == n3){
+                igual = n2, n3
+            }else if (n3 == n1){
+                igual = n3, n1
+            }else if (n3 == n2){
+                igual = n3, n2
+            }
+
+
+
+            // Mensagem
+            document.getElementById("mensagem").innerHTML = "O menor número informado dentre os três é: "+menor
+            document.getElementById("mensagem2").innerHTML = "O maior número informado dentre os três é: "+maior
+            document.getElementById("mensagem3").innerHTML = "Número que se repete: "+igual
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeiro número" id="numero1">
+        <input type="text" placeholder="Segundo número" id="numero2">
+        <input type="text" placeholder="Terceiro número" id="numero3">
+        <input type="button" value="Enviar valores" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+    <h1 id="mensagem2"></h1>
+    <h1 id="mensagem3"></h1>
+
+</body>
+</html>
