@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+
+    <!-- JS -->
+    <script>
+        
+        // Vetor
+        var nomes = ["Marcelo", "Julia", "Maria", "Lucas", "João", "Ricardo"]
+
+        function acao(){
+
+            // Obter o nome pesquisado
+            var nome = document.getElementById("nome").value
+            
+            // Retorno
+            var retorno = "Nome não encontrado!"
+
+            // Pesquisar no vetor
+            for(var i=0; i<nomes.length; i++){
+                if(nomes[i].toLocaleLowerCase() == nome.toLocaleLowerCase()){
+                    retorno = "Nome encontrado!"
+                }
+            }
+
+            // Exibir a mensagem
+            document.getElementById("mensagem").innerHTML = retorno
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Nome" id="nome">
+        <input type="button" value="Verificar" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>
